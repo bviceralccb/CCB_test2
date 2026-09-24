@@ -71,36 +71,45 @@ if (backToTop) {
   });
 }
 
-const aboutDropdown = document.querySelector('.nav-dropdown');
-if (aboutDropdown) {
-  const dropdownToggle = aboutDropdown.querySelector('.nav-dropdown-toggle');
-  const dropdownMenu = aboutDropdown.querySelector('.nav-submenu');
+document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+  const dropdownToggle = dropdown.querySelector('.nav-dropdown-toggle');
+  const dropdownMenu = dropdown.querySelector('.nav-submenu');
 
-  const setAboutDropdown = (open) => {
-    aboutDropdown.classList.toggle('is-open', open);
+  const setDropdown = (open) => {
+    dropdown.classList.toggle('is-open', open);
     dropdownToggle.setAttribute('aria-expanded', String(open));
   };
 
   dropdownToggle.addEventListener('click', () => {
-    setAboutDropdown(!aboutDropdown.classList.contains('is-open'));
+    const willOpen = !dropdown.classList.contains('is-open');
+    document.querySelectorAll('.nav-dropdown.is-open').forEach((openDropdown) => {
+      openDropdown.classList.remove('is-open');
+      openDropdown.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+    setDropdown(willOpen);
   });
 
   dropdownMenu.addEventListener('click', (event) => {
-    if (event.target.closest('a')) setAboutDropdown(false);
+    if (event.target.closest('a')) setDropdown(false);
   });
 
   document.addEventListener('click', (event) => {
-    if (!aboutDropdown.contains(event.target)) setAboutDropdown(false);
+    if (!dropdown.contains(event.target)) setDropdown(false);
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && aboutDropdown.classList.contains('is-open')) {
-      setAboutDropdown(false);
+    if (event.key === 'Escape' && dropdown.classList.contains('is-open')) {
+      setDropdown(false);
       dropdownToggle.focus();
     }
   });
+});
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 992) setAboutDropdown(false);
-  });
-}
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 992) {
+    document.querySelectorAll('.nav-dropdown.is-open').forEach((dropdown) => {
+      dropdown.classList.remove('is-open');
+      dropdown.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  }
+});
