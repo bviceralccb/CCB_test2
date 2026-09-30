@@ -10,8 +10,5 @@
 @media(max-width:650px){.personal-how-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.personal-step{min-height:68px;padding:10px 12px;gap:8px}.personal-product-content .tab-pane{padding:25px}.personal-product-content .step-mark{margin-bottom:13px}}
 @media(max-width:420px){.personal-step{font-size:.72rem}}
 
-/* Keep the full panoramic check photo visible in the portrait product panel. */
-.personal-how-photo.wide-photo::before{content:"";position:absolute;inset:-18px;background:url('personal-now-check-hires.jpeg') center/cover no-repeat;filter:blur(16px);opacity:.6}
-.personal-how-photo.wide-photo img{position:relative;z-index:1;object-fit:contain;object-position:center}
-.personal-how-photo.wide-photo::after{z-index:2}
-.personal-how-photo.wide-photo figcaption{z-index:3}
+/* Fill the photo panel for Now Checking and keep the pen in view. */
+.personal-how-photo.now-photo img{object-fit:cover;object-position:60% center}
