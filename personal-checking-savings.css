@@ -12,3 +12,14 @@
 
 /* Fill the photo panel for Now Checking and keep the pen in view. */
 .personal-how-photo.now-photo img{object-fit:cover;object-position:60% center}
+
+/* Reverse the Personal Banking hero to a light canvas with bank-blue type. */
+.personal-hero{background:radial-gradient(circle at 75% 20%,#e8f4fc 0,transparent 39%),linear-gradient(115deg,#fff,#f4f9fd 68%,#e9f4fb);color:var(--navy)}
+.personal-hero::after{border-color:rgba(1,60,104,.09);box-shadow:0 0 0 75px rgba(1,60,104,.025),0 0 0 150px rgba(1,60,104,.02)}
+.personal-hero .kicker.light{color:#07588f}
+.personal-hero h1 em{color:#9c6500}
+.personal-hero-copy>p:not(.kicker){color:#40586a}
+.personal-hero-actions>a:last-child{color:var(--navy);border-color:rgba(1,60,104,.45)}
+.personal-hero-actions>a:last-child:hover{color:var(--blue);border-color:var(--blue)}
+.personal-hero .button-gold{color:var(--navy)}
+.personal-hero-photo{border-color:rgba(1,60,104,.12);box-shadow:0 30px 70px rgba(1,60,104,.14)}
