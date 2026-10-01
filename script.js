@@ -15,8 +15,7 @@ document.querySelectorAll('.online-banking-features > div').forEach((feature) =>
   feature.setAttribute('role', 'listitem');
 });
 
-const serviceSpotlight = document.getElementById('service-spotlight');
-if (serviceSpotlight) {
+document.querySelectorAll('.service-spotlight').forEach((serviceSpotlight) => {
   const entries = [...serviceSpotlight.querySelectorAll('.service-entry')];
   const image = serviceSpotlight.querySelector('.service-visual img');
   const caption = serviceSpotlight.querySelector('.service-visual figcaption');
@@ -50,7 +49,7 @@ if (serviceSpotlight) {
     const preload = new Image();
     preload.src = entry.querySelector('.service-toggle').dataset.image;
   });
-}
+});
 
 const footerSections = document.querySelectorAll('.footer-grid > div');
 if (footerSections[2]) {
