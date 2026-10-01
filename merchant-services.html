@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=merchant-spotlight">
 </head>
 <body class="merchant-page">
   <div class="fdic-banner" role="region" aria-label="FDIC deposit insurance notice">
@@ -41,11 +41,26 @@
     </section>
     <section class="merchant-solutions section" id="solutions" aria-labelledby="solutions-title">
       <div class="container"><div class="section-head centered"><p class="kicker blue">PAYMENT SOLUTIONS</p><h2 id="solutions-title">Built around the way you do business.</h2><p>Choose practical tools that help you accept payments confidently and keep your day moving.</p></div>
-        <div class="merchant-card-grid">
-          <article class="merchant-card"><span aria-hidden="true">▣</span><h3>In-person payments</h3><p>Serve customers at the counter with dependable payment equipment designed for everyday transactions.</p></article>
-          <article class="merchant-card"><span aria-hidden="true">↗</span><h3>Flexible solutions</h3><p>Explore payment options that can adapt to your workflow, customer experience and business needs.</p></article>
-          <article class="merchant-card"><span aria-hidden="true">✓</span><h3>Security in focus</h3><p>Support safer payment acceptance with solutions designed to help protect transaction information.</p></article>
-          <article class="merchant-card"><span aria-hidden="true">●</span><h3>Responsive support</h3><p>Get help from a team that values personal service and understands the needs of local businesses.</p></article>
+        <div class="service-spotlight" id="merchant-service-spotlight">
+          <div class="service-accordion" aria-label="Explore payment solutions">
+            <article class="service-entry is-active" id="in-person-payments">
+              <h3><button class="service-toggle" type="button" aria-expanded="true" aria-controls="solution-panel-in-person" data-image="AdobeStock_224113541b.jpeg" data-image-alt="Customer paying a merchant with a card reader" data-caption="In-person payments"><span class="service-number">01</span><span>In-person payments</span><span class="service-mark" aria-hidden="true">+</span></button></h3>
+              <div class="service-panel" id="solution-panel-in-person"><p>Serve customers at the counter with dependable payment equipment designed for everyday transactions.</p><a class="button button-blue btn" href="https://portal.chinocommercialbank.com/Account/Login?ReturnUrl=%2FProductApplication%3FptId%3D4">Apply Now <b aria-hidden="true">→</b></a></div>
+            </article>
+            <article class="service-entry" id="flexible-solutions">
+              <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="solution-panel-flexible" data-image="merchant-support-hero.jpeg" data-image-alt="Contactless payment being made at a card reader" data-caption="Flexible solutions"><span class="service-number">02</span><span>Flexible solutions</span><span class="service-mark" aria-hidden="true">+</span></button></h3>
+              <div class="service-panel" id="solution-panel-flexible" hidden><p>Explore payment options that can adapt to your workflow, customer experience and business needs.</p><a class="button button-blue btn" href="https://portal.chinocommercialbank.com/Account/Login?ReturnUrl=%2FProductApplication%3FptId%3D4">Apply Now <b aria-hidden="true">→</b></a></div>
+            </article>
+            <article class="service-entry" id="security-in-focus">
+              <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="solution-panel-security" data-image="AdobeStock_117550326.jpeg" data-image-alt="Digital fraud prevention and transaction security graphic" data-caption="Security in focus"><span class="service-number">03</span><span>Security in focus</span><span class="service-mark" aria-hidden="true">+</span></button></h3>
+              <div class="service-panel" id="solution-panel-security" hidden><p>Support safer payment acceptance with solutions designed to help protect transaction information.</p><a class="button button-blue btn" href="https://portal.chinocommercialbank.com/Account/Login?ReturnUrl=%2FProductApplication%3FptId%3D4">Apply Now <b aria-hidden="true">→</b></a></div>
+            </article>
+            <article class="service-entry" id="responsive-support">
+              <h3><button class="service-toggle" type="button" aria-expanded="false" aria-controls="solution-panel-support" data-image="contact-us-hero.jpeg" data-image-alt="Business partners shaking hands after a meeting" data-caption="Responsive support"><span class="service-number">04</span><span>Responsive support</span><span class="service-mark" aria-hidden="true">+</span></button></h3>
+              <div class="service-panel" id="solution-panel-support" hidden><p>Get help from a team that values personal service and understands the needs of local businesses.</p><a class="button button-blue btn" href="merchant-support.html">Get Hardware Support <b aria-hidden="true">→</b></a></div>
+            </article>
+          </div>
+          <figure class="service-visual"><img src="AdobeStock_224113541b.jpeg" alt="Customer paying a merchant with a card reader" loading="lazy" width="1920" height="1275"><div class="service-visual-overlay"><p>PAYMENT SOLUTIONS FOR YOUR BUSINESS</p><figcaption>In-person payments</figcaption></div></figure>
         </div>
       </div>
     </section>
@@ -61,6 +76,6 @@
   </footer>
   <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"></path></svg></button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=merchant-spotlight"></script>
 </body>
 </html>
