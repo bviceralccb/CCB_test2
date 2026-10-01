@@ -23,3 +23,10 @@
 .personal-hero-actions>a:last-child:hover{color:var(--blue);border-color:var(--blue)}
 .personal-hero .button-gold{color:var(--navy)}
 .personal-hero-photo{border-color:rgba(1,60,104,.12);box-shadow:0 30px 70px rgba(1,60,104,.14)}
+
+/* Keep the account selector the same height as tabs change. Hidden panels still
+   size the grid, so the tallest account sets the height at each screen width. */
+.personal-product-content{display:grid}
+.personal-product-content>.tab-pane{grid-area:1/1;display:block;visibility:hidden;pointer-events:none}
+.personal-product-content>.tab-pane.active{visibility:visible;pointer-events:auto}
+.personal-how-photo img{position:absolute;inset:0;height:100%;min-height:0}
