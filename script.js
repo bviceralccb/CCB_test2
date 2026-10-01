@@ -15,11 +15,42 @@ document.querySelectorAll('.online-banking-features > div').forEach((feature) =>
   feature.setAttribute('role', 'listitem');
 });
 
-document.querySelectorAll('.service-card').forEach((card) => {
-  const link = card.querySelector('a');
-  const heading = card.querySelector('h3');
-  if (link && heading) link.setAttribute('aria-label', `Learn more about ${heading.textContent.trim()}`);
-});
+const serviceSpotlight = document.getElementById('service-spotlight');
+if (serviceSpotlight) {
+  const entries = [...serviceSpotlight.querySelectorAll('.service-entry')];
+  const image = serviceSpotlight.querySelector('.service-visual img');
+  const caption = serviceSpotlight.querySelector('.service-visual figcaption');
+
+  const selectService = (selected) => {
+    entries.forEach((entry) => {
+      const expanded = entry === selected;
+      entry.classList.toggle('is-active', expanded);
+      entry.querySelector('.service-toggle').setAttribute('aria-expanded', String(expanded));
+      entry.querySelector('.service-panel').hidden = !expanded;
+    });
+
+    const button = selected.querySelector('.service-toggle');
+    if (image.getAttribute('src') !== button.dataset.image) image.src = button.dataset.image;
+    image.alt = button.dataset.imageAlt;
+    caption.textContent = button.dataset.caption;
+  };
+
+  entries.forEach((entry) => {
+    entry.querySelector('.service-toggle').addEventListener('click', () => selectService(entry));
+  });
+
+  const selectLinkedService = () => {
+    const linked = entries.find((entry) => `#${entry.id}` === window.location.hash);
+    if (linked) selectService(linked);
+  };
+  window.addEventListener('hashchange', selectLinkedService);
+  selectLinkedService();
+
+  entries.slice(1).forEach((entry) => {
+    const preload = new Image();
+    preload.src = entry.querySelector('.service-toggle').dataset.image;
+  });
+}
 
 const footerSections = document.querySelectorAll('.footer-grid > div');
 if (footerSections[2]) {
