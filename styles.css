@@ -125,15 +125,25 @@ footer{font-family:"DM Sans",sans-serif;font-size:1rem;line-height:1.65}
 
 /* Color mode: shared across every page. Keep the regulatory banner and the
    already-dark blue brand sections on their established surfaces. */
-.footer-theme{min-width:0;margin:22px 0 0;padding:0;border:0;color:#fff}
-.footer-theme legend{float:none;width:auto;margin:0 0 9px;padding:0;color:#d5e6f1;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.theme-options{display:flex;gap:5px;flex-wrap:wrap}
-.theme-options label{position:relative;display:block;margin:0;cursor:pointer}
-.theme-options input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
-.theme-options span{display:block;padding:7px 9px;border:1px solid #8ca9bd;border-radius:6px;color:#e4f0f7;font-size:.73rem;font-weight:700;line-height:1.25}
-.theme-options label:hover span{border-color:#f5c96f;color:#fff}
-.theme-options input:checked+span{border-color:#f5c96f;background:#f5c96f;color:#072f50}
-.theme-options input:focus-visible+span{outline:3px solid #f5c96f;outline-offset:3px}
+.footer-theme{min-width:0;margin:22px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.footer-theme-label{color:#d5e6f1;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.theme-switch{position:relative;display:block;width:116px;height:52px;padding:0;border:2px solid #c4d3e1;border-radius:100px;background:#dce5ee;box-shadow:inset 0 3px 7px rgba(10,31,56,.25);cursor:pointer;transition:background .25s,border-color .25s}
+.theme-switch svg{display:block;width:25px;height:25px}
+.theme-switch-track-icon{position:absolute;top:12px;color:#8d9caf}
+.theme-switch-track-sun{left:14px}
+.theme-switch-track-moon{right:14px}
+.theme-switch-thumb{position:absolute;top:-2px;left:-2px;display:grid;place-items:center;width:54px;height:54px;border:2px solid #eef2f6;border-radius:50%;background:#fff;box-shadow:0 3px 9px rgba(0,20,42,.3);transform:translateX(0);transition:transform .25s,box-shadow .25s}
+.theme-switch-thumb>span{grid-area:1/1;display:grid;place-items:center;transition:opacity .2s}
+.theme-switch-thumb-sun{color:#ef9a0c}
+.theme-switch-thumb-moon{color:#526bc4;opacity:0}
+.theme-switch:hover .theme-switch-thumb{box-shadow:0 4px 13px rgba(0,20,42,.4)}
+.theme-switch:focus-visible{outline:3px solid #f5c96f;outline-offset:4px}
+[data-bs-theme="dark"] .theme-switch{background:#59688d;border-color:#8998b5}
+[data-bs-theme="dark"] .theme-switch-track-icon{color:#b4bed4}
+[data-bs-theme="dark"] .theme-switch-thumb{transform:translateX(64px)}
+[data-bs-theme="dark"] .theme-switch-thumb-sun{opacity:0}
+[data-bs-theme="dark"] .theme-switch-thumb-moon{opacity:1}
+@media(prefers-reduced-motion:reduce){.theme-switch,.theme-switch-thumb,.theme-switch-thumb>span{transition:none}}
 
 :root[data-bs-theme="dark"]{color-scheme:dark;--ink:#edf5fb;--muted:#bacfdd;--line:#35536a;--blue-pale:#102d43;--blue-gray:#23445c;--gold:#f5c96f;--shadow:0 24px 70px rgba(0,10,22,.32);--theme-bg:#0b2031;--theme-surface:#153247;--theme-raised:#1a3b52;--theme-heading:#f4f8fc;--theme-link:#a9d9ff;--bs-body-bg:#0b2031;--bs-body-color:#edf5fb;--bs-border-color:#35536a;--bs-link-color:#a9d9ff}
 [data-bs-theme="dark"] body{background:var(--theme-bg);color:var(--ink)}

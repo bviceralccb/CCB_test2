@@ -62,13 +62,15 @@ if (footerSections[3]) {
 
 }
 
-const themeControls = document.querySelectorAll('.footer-theme input[name="ccb-theme"]');
-if (window.CCBTheme && themeControls.length) {
-  themeControls.forEach((control) => {
-    control.checked = control.value === window.CCBTheme.getChoice();
-    control.addEventListener('change', () => {
-      if (control.checked) window.CCBTheme.setChoice(control.value);
-    });
+const themeSwitch = document.querySelector('.theme-switch');
+if (window.CCBTheme && themeSwitch) {
+  const syncThemeSwitch = () => {
+    themeSwitch.setAttribute('aria-checked', String(window.CCBTheme.getChoice() === 'dark'));
+  };
+  syncThemeSwitch();
+  themeSwitch.addEventListener('click', () => {
+    window.CCBTheme.setChoice(window.CCBTheme.getChoice() === 'dark' ? 'light' : 'dark');
+    syncThemeSwitch();
   });
 }
 
