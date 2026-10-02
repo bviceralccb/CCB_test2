@@ -159,7 +159,7 @@ footer{font-family:"DM Sans",sans-serif;font-size:1rem;line-height:1.65}
 [data-bs-theme="dark"] .service-mark{color:var(--ink);border-color:var(--line)}
 [data-bs-theme="dark"] .service-toggle:hover,[data-bs-theme="dark"] .service-card a,[data-bs-theme="dark"] .services .service-card a,[data-bs-theme="dark"] .contact-options a:hover{color:var(--theme-link)}
 [data-bs-theme="dark"] .general-info-layout article>p,[data-bs-theme="dark"] .contact-intro>p:not(.kicker),[data-bs-theme="dark"] .accessibility-content .accessibility-intro{color:var(--ink)}
-[data-bs-theme="dark"] .accessibility-list li{color:var(--ink)}
+[data-bs-theme="dark"] .accessibility-content p,[data-bs-theme="dark"] .accessibility-list li{color:var(--ink)}
 [data-bs-theme="dark"] .accessibility-list li:before{background:#f5c96f;color:#082b45}
 [data-bs-theme="dark"] .support-accordion{--bs-accordion-bg:var(--theme-surface);--bs-accordion-color:var(--ink);--bs-accordion-border-color:var(--line);--bs-accordion-btn-color:var(--ink);--bs-accordion-active-bg:var(--theme-raised);--bs-accordion-active-color:var(--ink)}
 [data-bs-theme="dark"] .support-accordion .accordion-item,[data-bs-theme="dark"] .support-accordion .accordion-button{background:var(--theme-surface);color:var(--ink);border-color:var(--line)}
