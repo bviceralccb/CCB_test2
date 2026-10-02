@@ -122,3 +122,47 @@ footer{font-family:"DM Sans",sans-serif;font-size:1rem;line-height:1.65}
 @media(max-width:991.98px){.service-spotlight{grid-template-columns:1fr}.service-accordion{min-height:0}.service-visual{min-height:360px}}
 @media(max-width:650px){.service-spotlight{gap:16px}.service-accordion{padding:12px 10px}.service-toggle{grid-template-columns:26px minmax(0,1fr) 34px;gap:10px;padding:18px 12px;font-size:1.08rem}.service-mark{width:32px;height:32px}.service-panel{min-height:0;padding:0 12px 22px 48px}.service-visual{min-height:280px}.service-visual-overlay{right:22px;bottom:21px;left:22px}}
 @media(prefers-reduced-motion:reduce){.service-entry,.service-mark{transition:none}}
+
+/* Color mode: shared across every page. Keep the regulatory banner and the
+   already-dark blue brand sections on their established surfaces. */
+.footer-theme{min-width:0;margin:22px 0 0;padding:0;border:0;color:#fff}
+.footer-theme legend{float:none;width:auto;margin:0 0 9px;padding:0;color:#d5e6f1;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.theme-options{display:flex;gap:5px;flex-wrap:wrap}
+.theme-options label{position:relative;display:block;margin:0;cursor:pointer}
+.theme-options input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.theme-options span{display:block;padding:7px 9px;border:1px solid #8ca9bd;border-radius:6px;color:#e4f0f7;font-size:.73rem;font-weight:700;line-height:1.25}
+.theme-options label:hover span{border-color:#f5c96f;color:#fff}
+.theme-options input:checked+span{border-color:#f5c96f;background:#f5c96f;color:#072f50}
+.theme-options input:focus-visible+span{outline:3px solid #f5c96f;outline-offset:3px}
+
+:root[data-bs-theme="dark"]{color-scheme:dark;--ink:#edf5fb;--muted:#bacfdd;--line:#35536a;--blue-pale:#102d43;--blue-gray:#23445c;--gold:#f5c96f;--shadow:0 24px 70px rgba(0,10,22,.32);--theme-bg:#0b2031;--theme-surface:#153247;--theme-raised:#1a3b52;--theme-heading:#f4f8fc;--theme-link:#a9d9ff;--bs-body-bg:#0b2031;--bs-body-color:#edf5fb;--bs-border-color:#35536a;--bs-link-color:#a9d9ff}
+[data-bs-theme="dark"] body{background:var(--theme-bg);color:var(--ink)}
+[data-bs-theme="dark"] a:focus-visible,[data-bs-theme="dark"] button:focus-visible,[data-bs-theme="dark"] [tabindex]:focus-visible{outline-color:#f5c96f;box-shadow:0 0 0 6px #0b2031}
+[data-bs-theme="dark"] .site-header,[data-bs-theme="dark"] .accessibility-header{background:rgba(11,32,49,.97);color:var(--ink);box-shadow:0 5px 22px rgba(0,8,19,.28)}
+[data-bs-theme="dark"] .site-header .brand img,[data-bs-theme="dark"] .accessibility-header .brand img{padding:4px;border-radius:7px;background:#fff}
+[data-bs-theme="dark"] .primary-nav,[data-bs-theme="dark"] .nav-submenu,[data-bs-theme="dark"] .nav-submenu:before{background:var(--theme-surface)}
+[data-bs-theme="dark"] .nav-submenu a,[data-bs-theme="dark"] .nav-dropdown-toggle,[data-bs-theme="dark"] .primary-nav>a:not(.nav-cta),[data-bs-theme="dark"] .accessibility-back{color:var(--ink)}
+[data-bs-theme="dark"] .nav-dropdown-toggle.active,[data-bs-theme="dark"] .nav-submenu a:hover,[data-bs-theme="dark"] .nav-submenu a:focus-visible,[data-bs-theme="dark"] .utility a:hover{color:var(--theme-link)}
+[data-bs-theme="dark"] .menu-btn span{background:var(--ink)}
+[data-bs-theme="dark"] .nav-cta,[data-bs-theme="dark"] .button-gold{background:#f5c96f;color:#082b45}
+[data-bs-theme="dark"] .nav-cta:hover,[data-bs-theme="dark"] .button-gold:hover{background:#ffda91;color:#082b45}
+[data-bs-theme="dark"] .kicker.blue,[data-bs-theme="dark"] .service-number,[data-bs-theme="dark"] .general-info-facts strong,[data-bs-theme="dark"] .general-info-contact a,[data-bs-theme="dark"] .contact-branch-grid b{color:var(--theme-link)}
+
+[data-bs-theme="dark"] .hero{background:linear-gradient(105deg,rgba(11,32,49,.95),rgba(17,47,68,.9)),url("hero-background-lines.jpg") center/cover no-repeat}
+[data-bs-theme="dark"] :is(.why,.services,.merchant-solutions,.support-devices,.contact-main,.merchant-cta,.general-info-layout aside,.general-info-contact){background:var(--blue-pale);color:var(--ink)}
+[data-bs-theme="dark"] :is(.security,.final-cta,.support-faq,.general-info-content,.contact-branches,.accessibility-page){background:var(--theme-bg);color:var(--ink)}
+[data-bs-theme="dark"] :is(.steps .container,.relationship-card,.support-bubble,.security-badge,.security-panel,.merchant-support-card,.merchant-step-grid>div,.support-quick-card,.support-device-card,.accessibility-list li,.general-info-facts div,.contact-options>a,.contact-safety,.contact-form,.service-accordion,.services .service-card,.contact-branch-grid a,.play-link span){background:var(--theme-surface);color:var(--ink);border-color:var(--line)}
+[data-bs-theme="dark"] .service-entry.is-active,[data-bs-theme="dark"] .contact-branch-grid a:hover{background:var(--theme-raised)}
+[data-bs-theme="dark"] .nav-submenu a:hover,[data-bs-theme="dark"] .nav-submenu a:focus-visible,[data-bs-theme="dark"] .step:not(.intro):hover{background:var(--theme-raised)}
+[data-bs-theme="dark"] :is(.hero h1,.hero-proof strong,.play-link,.step h3,.section-head h2,.why-copy h2,.security h2,.service-card h3,.relationship-card strong,.benefit-grid strong,.security-panel strong,.services .section-head h2,.services .service-card h3,.security h2,.final-cta h2,.merchant-support-card h3,.merchant-step-grid h3,.merchant-cta h2,.support-quick-card h2,.support-device-heading h3,.general-info-layout aside h2,.general-info-layout article h2,.general-info-layout article .general-info-lede,.contact-intro h2,.contact-form-heading h2,.contact-options strong,.contact-safety strong,.contact-form label,.contact-branch-grid strong,.service-toggle,.accessibility-content h2){color:var(--theme-heading)}
+[data-bs-theme="dark"] .services .service-card.highlighted,[data-bs-theme="dark"] .services .service-card:hover,[data-bs-theme="dark"] .services .service-card.highlighted:hover{background:var(--theme-surface);color:var(--ink)}
+[data-bs-theme="dark"] .service-mark{color:var(--ink);border-color:var(--line)}
+[data-bs-theme="dark"] .service-toggle:hover,[data-bs-theme="dark"] .service-card a,[data-bs-theme="dark"] .services .service-card a,[data-bs-theme="dark"] .contact-options a:hover{color:var(--theme-link)}
+[data-bs-theme="dark"] .general-info-layout article>p,[data-bs-theme="dark"] .contact-intro>p:not(.kicker),[data-bs-theme="dark"] .accessibility-content .accessibility-intro{color:var(--ink)}
+[data-bs-theme="dark"] .accessibility-list li{color:var(--ink)}
+[data-bs-theme="dark"] .accessibility-list li:before{background:#f5c96f;color:#082b45}
+[data-bs-theme="dark"] .support-accordion{--bs-accordion-bg:var(--theme-surface);--bs-accordion-color:var(--ink);--bs-accordion-border-color:var(--line);--bs-accordion-btn-color:var(--ink);--bs-accordion-active-bg:var(--theme-raised);--bs-accordion-active-color:var(--ink)}
+[data-bs-theme="dark"] .support-accordion .accordion-item,[data-bs-theme="dark"] .support-accordion .accordion-button{background:var(--theme-surface);color:var(--ink);border-color:var(--line)}
+[data-bs-theme="dark"] .support-accordion .accordion-button:not(.collapsed){background:var(--theme-raised);color:var(--ink)}
+[data-bs-theme="dark"] .contact-form input:not([type=checkbox]),[data-bs-theme="dark"] .contact-form select,[data-bs-theme="dark"] .contact-form textarea{background:#0b2031;color:var(--ink);border-color:#7897ab}
+[data-bs-theme="dark"] .contact-form input::placeholder,[data-bs-theme="dark"] .contact-form textarea::placeholder{color:#b8cbd9}

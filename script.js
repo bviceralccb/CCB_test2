@@ -62,6 +62,16 @@ if (footerSections[3]) {
 
 }
 
+const themeControls = document.querySelectorAll('.footer-theme input[name="ccb-theme"]');
+if (window.CCBTheme && themeControls.length) {
+  themeControls.forEach((control) => {
+    control.checked = control.value === window.CCBTheme.getChoice();
+    control.addEventListener('change', () => {
+      if (control.checked) window.CCBTheme.setChoice(control.value);
+    });
+  });
+}
+
 const backToTop = document.querySelector('.back-to-top');
 
 const homepageCarousel = document.getElementById('banking-carousel');

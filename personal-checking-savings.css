@@ -32,3 +32,17 @@
 /* Banking That Fits contact action */
 .personal-intro .button{margin-top:22px;color:#fff;font-size:.92rem;line-height:1.3}
 .personal-intro .button:hover{background:var(--navy);color:#fff}
+
+/* The personal page loads after the shared stylesheet, so its light hero and
+   account styles need their dark overrides here. */
+[data-bs-theme="dark"] .personal-hero{background:radial-gradient(circle at 75% 20%,#204865 0,transparent 39%),linear-gradient(115deg,#0b2031,#15384f 68%,#102c43);color:var(--theme-heading)}
+[data-bs-theme="dark"] .personal-hero::after{border-color:rgba(255,255,255,.1);box-shadow:0 0 0 75px rgba(255,255,255,.025),0 0 0 150px rgba(255,255,255,.02)}
+[data-bs-theme="dark"] .personal-hero .kicker.light,[data-bs-theme="dark"] .personal-hero h1 em{color:#f5c96f}
+[data-bs-theme="dark"] .personal-hero-copy>p:not(.kicker){color:#d2e4f0}
+[data-bs-theme="dark"] .personal-intro h2,[data-bs-theme="dark"] .personal-section-head h2{color:var(--theme-heading)}
+[data-bs-theme="dark"] .personal-accounts{background:var(--theme-bg)}
+[data-bs-theme="dark"] .personal-savings{background:var(--blue-pale)}
+[data-bs-theme="dark"] .account-card{background:var(--theme-surface);border-color:var(--line)}
+[data-bs-theme="dark"] .account-type{background:var(--theme-raised);color:var(--theme-link)}
+[data-bs-theme="dark"] .account-card h3,[data-bs-theme="dark"] .account-facts dd,[data-bs-theme="dark"] .account-fee strong,[data-bs-theme="dark"] .account-benefits strong{color:var(--theme-heading)}
+[data-bs-theme="dark"] .account-fee p,[data-bs-theme="dark"] .account-benefits li{color:var(--muted)}
