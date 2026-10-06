@@ -160,6 +160,13 @@
 .ccb-app-phone-screenshot::before{display:none}
 .ccb-app-phone.ccb-app-phone-screenshot img{display:block;width:100%;height:auto;margin:0;object-fit:contain}
 </style>
+<style id="ccb-store-badge-styles">
+.ccb-app-stores{align-items:center}
+.ccb-app-store.ccb-app-store-badge{display:inline-flex;flex:0 0 auto;min-width:0;min-height:0;padding:0;border-radius:7px;background:transparent}
+.ccb-app-store.ccb-app-store-badge:hover{background:transparent}
+.ccb-app-store-badge img{display:block;height:58px;width:auto;max-width:100%;object-fit:contain}
+@media(max-width:380px){.ccb-app-store-badge img{height:50px}}
+</style>
 </head>
 <body class="mobile-banking-page">
   <div class="fdic-banner" role="region" aria-label="FDIC deposit insurance notice"><div class="container fdic-banner-inner"><img src="https://www.chinocommercialbank.com/wp-content/plugins/FDIC-badge/images/fdic-digital-sign-color.svg" alt="FDIC-Insured — Backed by the full faith and credit of the U.S. Government"></div></div>
@@ -191,14 +198,8 @@
             <h1 id="ccb-app-title">Mobile Banking</h1>
             <p>Your bank, wherever life takes you. Our free app puts everyday banking on your phone or tablet, with access to your money around the clock.</p>
             <div class="ccb-app-stores">
-              <a class="ccb-app-store" href="https://play.google.com/store/apps/details?id=com.chinocb.mobile" target="_blank" rel="noopener noreferrer" aria-label="Get Chino Commercial Bank Mobile on Google Play (opens in a new tab)">
-                <svg viewBox="0 0 28 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 2 25 16 3 30Z"/><path d="m3 2 15 19M3 30 18 11"/></svg>
-                <span><small>GET IT ON</small><strong>Google Play</strong></span>
-              </a>
-              <a class="ccb-app-store" href="https://apps.apple.com/us/app/chino-commercial-bank-mobile/id1160458595" target="_blank" rel="noopener noreferrer" aria-label="Download Chino Commercial Bank Mobile on the App Store (opens in a new tab)">
-                <svg viewBox="0 0 24 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="1.5" width="16" height="29" rx="4"/><path d="M10 5h4M10 27h4"/></svg>
-                <span><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
-              </a>
+              <a class="ccb-app-store ccb-app-store-badge" href="https://play.google.com/store/apps/details?id=com.chinocb.mobile" target="_blank" rel="noopener noreferrer" aria-label="Get Chino Commercial Bank Mobile on Google Play (opens in a new tab)"><img src="google-play-badge.png" alt="" width="300" height="98"></a>
+              <a class="ccb-app-store ccb-app-store-badge" href="https://apps.apple.com/us/app/chino-commercial-bank-mobile/id1160458595" target="_blank" rel="noopener noreferrer" aria-label="Download Chino Commercial Bank Mobile on the App Store (opens in a new tab)"><img src="app-store-badge.png" alt="" width="300" height="89"></a>
             </div>
             <p class="ccb-app-help">Sign in using your Chino Commercial Bank online banking credentials. <a href="#getting-started">See how to get started</a>.</p>
             <button class="ccb-app-motion" type="button" aria-pressed="false" aria-label="Pause decorative animation" hidden>Pause animation</button>
