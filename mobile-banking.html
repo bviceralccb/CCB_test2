@@ -155,6 +155,11 @@
 }
 @media(prefers-reduced-motion:reduce){.start-step,.start-title,.start-photo-card>img,.start-link-arrow{animation:none!important;transition:none!important;transform:none!important}}
 </style>
+<style id="mobile-app-screen-styles">
+.ccb-app-phone.ccb-app-phone-screenshot{padding:0;min-height:0;overflow:hidden;background:#d4e0e8}
+.ccb-app-phone-screenshot::before{display:none}
+.ccb-app-phone.ccb-app-phone-screenshot img{display:block;width:100%;height:auto;margin:0;object-fit:contain}
+</style>
 </head>
 <body class="mobile-banking-page">
   <div class="fdic-banner" role="region" aria-label="FDIC deposit insurance notice"><div class="container fdic-banner-inner"><img src="https://www.chinocommercialbank.com/wp-content/plugins/FDIC-badge/images/fdic-digital-sign-color.svg" alt="FDIC-Insured — Backed by the full faith and credit of the U.S. Government"></div></div>
@@ -178,13 +183,7 @@
         <div class="ccb-app-card">
           <div class="ccb-app-art" aria-hidden="true">
             <svg class="ccb-app-spark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 2C26 16 32 22 46 24C32 26 26 32 24 46C22 32 16 26 2 24C16 22 22 16 24 2Z"/></svg>
-            <div class="ccb-app-phone">
-              <img src="ccblogo_blue_transparent2.svg" alt="" loading="lazy" width="150" height="64">
-              <p class="ccb-app-screen-title">Your banking.<br>In your hands.</p>
-              <div class="ccb-app-screen-row"><span>▤</span> View accounts</div>
-              <div class="ccb-app-screen-row"><span>⇄</span> Transfer money</div>
-              <div class="ccb-app-screen-row"><span>✓</span> Deposit checks</div>
-            </div>
+            <div class="ccb-app-phone ccb-app-phone-screenshot"><img src="mobile-app-screen.png" alt="" width="357" height="657"></div>
             <div class="ccb-app-float"><small>CHINO COMMERCIAL BANK</small><strong>Local banking.<br>Wherever you go.</strong></div>
           </div>
           <div class="ccb-app-copy">
