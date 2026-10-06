@@ -54,7 +54,8 @@
 /* Template-inspired entrance and decorative motion. */
 .ccb-app-art{position:relative}
 .ccb-app-spark{position:absolute;left:14px;top:92px;width:46px;height:46px;color:#013c68}
-.ccb-app-motion{display:inline-flex;align-items:center;margin-top:16px;padding:7px 12px;border:1px solid #8ba5b8;border-radius:8px;background:transparent;color:#013c68;font:600 12px/1.4 inherit;cursor:pointer}
+.ccb-app-motion{display:inline-flex;align-items:center;margin-top:16px;padding:7px 12px;border:1px solid #8ba5b8;border-radius:8px;background:transparent;color:#013c68;font-family:inherit;font-size:12px;font-weight:600;line-height:1.4;cursor:pointer}
+.ccb-app-motion[hidden]{display:none}
 .ccb-app-motion:focus-visible{outline:3px solid #9c6500;outline-offset:3px}
 [data-bs-theme="dark"] .ccb-app-motion{color:#d2e4f0;border-color:#698ca5}
 @media(prefers-reduced-motion:no-preference){
