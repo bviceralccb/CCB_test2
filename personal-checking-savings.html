@@ -50,6 +50,25 @@
 @media(max-width:991.98px){.ccb-app-card{gap:30px;padding:44px 30px}.ccb-app-float{right:-12px;width:190px}.ccb-app-store{padding:12px 15px}}
 @media(max-width:767.98px){.ccb-app-section{padding:20px 0 50px}.ccb-app-card{grid-template-columns:1fr;padding:30px 24px;gap:30px;border-radius:24px}.ccb-app-art{min-height:415px;max-width:380px;width:100%;margin:auto}.ccb-app-phone{width:216px;min-height:402px}.ccb-app-float{right:0;bottom:20px}.ccb-app-copy h2{letter-spacing:-1px}.ccb-app-stores{gap:10px}.ccb-app-store{flex:1;min-width:170px}}
 @media(prefers-reduced-motion:reduce){.ccb-app-store{transition:none}.ccb-app-store:hover{transform:none}}
+
+/* Template-inspired entrance and decorative motion. */
+.ccb-app-art{position:relative}
+.ccb-app-spark{position:absolute;left:14px;top:92px;width:46px;height:46px;color:#013c68}
+.ccb-app-motion{display:inline-flex;align-items:center;margin-top:16px;padding:7px 12px;border:1px solid #8ba5b8;border-radius:8px;background:transparent;color:#013c68;font:600 12px/1.4 inherit;cursor:pointer}
+.ccb-app-motion:focus-visible{outline:3px solid #9c6500;outline-offset:3px}
+[data-bs-theme="dark"] .ccb-app-motion{color:#d2e4f0;border-color:#698ca5}
+@media(prefers-reduced-motion:no-preference){
+.ccb-app-section.ccb-app-revealed .ccb-app-art{animation:ccb-app-enter-right .8s ease-out both}
+.ccb-app-section.ccb-app-revealed .ccb-app-copy{animation:ccb-app-enter-left .8s ease-out both}
+.ccb-app-section.ccb-app-inview .ccb-app-float{animation:ccb-app-float 1.5s ease-in-out infinite}
+.ccb-app-section.ccb-app-inview .ccb-app-spark{animation:ccb-app-spin 10s linear infinite}
+.ccb-app-section.ccb-app-paused .ccb-app-float,.ccb-app-section.ccb-app-paused .ccb-app-spark{animation-play-state:paused}
+}
+@keyframes ccb-app-enter-right{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:translateX(0)}}
+@keyframes ccb-app-enter-left{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:translateX(0)}}
+@keyframes ccb-app-float{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+@keyframes ccb-app-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.ccb-app-section *{animation:none!important}.ccb-app-motion{display:none}}
 </style>
 </head>
 <body class="personal-accounts-page">
@@ -141,6 +160,7 @@
       <div class="container">
         <div class="ccb-app-card">
           <div class="ccb-app-art" aria-hidden="true">
+            <svg class="ccb-app-spark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 2C26 16 32 22 46 24C32 26 26 32 24 46C22 32 16 26 2 24C16 22 22 16 24 2Z"/></svg>
             <div class="ccb-app-phone">
               <img src="ccblogo_blue_transparent2.svg" alt="" loading="lazy" width="150" height="64">
               <p class="ccb-app-screen-title">Your banking.<br>In your hands.</p>
@@ -165,6 +185,7 @@
               </a>
             </div>
             <p class="ccb-app-help">Sign in using your Chino Commercial Bank online banking credentials. <a href="https://www.chinocommercialbank.com/personal-banking/online-banking/mb/">Learn more about mobile banking</a>.</p>
+            <button class="ccb-app-motion" type="button" aria-pressed="false" aria-label="Pause decorative animation" hidden>Pause animation</button>
           </div>
         </div>
       </div>
@@ -203,6 +224,28 @@
           caption.textContent = label;
         });
       });
+    })();
+  </script>
+
+  <script>
+    (() => {
+      const section = document.querySelector('#mobile-banking');
+      if (!section || !('IntersectionObserver' in window)) return;
+      const control = section.querySelector('.ccb-app-motion');
+      control.hidden = false;
+      control.addEventListener('click', () => {
+        const paused = section.classList.toggle('ccb-app-paused');
+        control.setAttribute('aria-pressed', String(paused));
+        control.setAttribute('aria-label', paused ? 'Resume decorative animation' : 'Pause decorative animation');
+        control.textContent = paused ? 'Resume animation' : 'Pause animation';
+      });
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          section.classList.toggle('ccb-app-inview', entry.isIntersecting);
+          if (entry.isIntersecting) section.classList.add('ccb-app-revealed');
+        });
+      }, { threshold: 0.15 });
+      observer.observe(section);
     })();
   </script>
 </body>
