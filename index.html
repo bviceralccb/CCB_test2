@@ -13,6 +13,15 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css?v=theme-4">
+<style id="homepage-section-motion">
+@media(prefers-reduced-motion:no-preference){
+.ccb-home-reveal{animation:ccb-home-rise .75s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--ccb-reveal-delay,0ms)}
+.ccb-home-reveal.ccb-home-photo{animation-name:ccb-home-photo-in;animation-duration:.95s}
+}
+@keyframes ccb-home-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ccb-home-photo-in{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(prefers-reduced-motion:reduce){.ccb-home-reveal{animation:none!important}}
+</style>
 </head>
 <body>
   <div class="fdic-banner" role="region" aria-label="FDIC deposit insurance notice">
@@ -177,5 +186,41 @@
   </button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="script.js?v=theme-2"></script>
+<script id="homepage-section-motion-script">
+(() => {
+  const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (preference.matches || !('IntersectionObserver' in window)) return;
+  const groups = [
+    ['#about .why-visual', '#about .why-copy > .kicker', '#about .why-copy > h2', '#about .why-copy > p:not(.kicker)', '#about .benefit-grid > div', '#about .why-copy > a'],
+    ['#services .section-head', '#services .service-entry', '#services .service-visual'],
+    ['#contact > .container > div', '#contact .final-cta-image']
+  ];
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting);
+    visible.forEach((entry, index) => {
+      const element = entry.target;
+      observer.unobserve(element);
+      if (preference.matches) return;
+      element.style.setProperty('--ccb-reveal-delay', Math.min(index * 80, 320) + 'ms');
+      element.classList.add('ccb-home-reveal');
+      element.addEventListener('animationend', () => {
+        element.classList.remove('ccb-home-reveal');
+        element.style.removeProperty('--ccb-reveal-delay');
+      }, { once: true });
+    });
+  }, { threshold: 0.12 });
+  groups.forEach(selectors => document.querySelectorAll(selectors.join(',')).forEach(element => {
+    if (element.matches('.why-visual, .service-visual, .final-cta-image')) element.classList.add('ccb-home-photo');
+    observer.observe(element);
+  }));
+  preference.addEventListener('change', event => {
+    if (!event.matches) return;
+    document.querySelectorAll('.ccb-home-reveal').forEach(element => {
+      element.classList.remove('ccb-home-reveal');
+      element.style.removeProperty('--ccb-reveal-delay');
+    });
+  });
+})();
+</script>
 </body>
 </html>
