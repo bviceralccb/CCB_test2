@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#013c68">
+  <script src="theme-init.js?v=2"></script>
+  <meta name="description" content="Manage your money on the go with Chino Commercial Bank Mobile. Check balances, pay bills, transfer money and deposit checks.">
+  <title>Mobile Banking | Chino Commercial Bank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css?v=theme-4">
+<style id="ccb-app-showcase-styles">
+/* Mobile banking app showcase */
+.ccb-app-section{padding:32px 0 80px}
+.ccb-app-card{display:grid;grid-template-columns:1fr 1.12fr;align-items:center;gap:54px;padding:64px 54px;border-radius:32px;background:#eef4f7;color:#013c68;overflow:hidden}
+.ccb-app-art{position:relative;min-height:440px;display:flex;align-items:center;justify-content:center;isolation:isolate}
+.ccb-app-art::before{content:"";position:absolute;z-index:-1;left:0;right:0;top:80px;bottom:55px;border-radius:30px;background:#eab53c}
+.ccb-app-phone{width:232px;min-height:422px;padding:37px 18px 24px;border:8px solid #152a3a;border-radius:38px;background:#fff;box-shadow:0 24px 45px #013c6829;transform:rotate(-5deg);position:relative;color:#013c68}
+.ccb-app-phone::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:70px;height:11px;border-radius:10px;background:#152a3a}
+.ccb-app-phone img{width:150px;height:64px;object-fit:contain;display:block;margin:0 auto 24px}
+.ccb-app-screen-title{font:800 23px/1.2 Manrope,sans-serif;margin:0 0 18px}
+.ccb-app-screen-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #dde8ef;font-size:13px;font-weight:700}
+.ccb-app-screen-row span{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#edf4f8;color:#013c68;font-size:17px}
+.ccb-app-float{position:absolute;right:-4px;bottom:35px;width:218px;padding:23px;border-radius:16px;background:linear-gradient(130deg,#07588f,#013c68);box-shadow:0 15px 35px #013c6833;color:#fff;transform:rotate(6deg)}
+.ccb-app-float small{font-size:10px;letter-spacing:1.7px;display:block;margin-bottom:15px;color:#f5ce78}
+.ccb-app-float strong{font:700 21px/1.35 Manrope,sans-serif}
+.ccb-app-copy .kicker{color:#07588f;margin:0 0 20px}
+.ccb-app-copy h1{font-size:clamp(2rem,3.4vw,3.25rem);line-height:1.12;letter-spacing:-1.6px;color:#013c68;margin:0 0 24px}
+.ccb-app-copy>p:not(.kicker){color:#40586a;line-height:1.8;font-size:1rem}
+.ccb-app-stores{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 20px}
+.ccb-app-store{display:flex;align-items:center;gap:12px;min-height:64px;padding:12px 20px;border-radius:12px;background:#013c68;color:#fff;text-decoration:none;transition:background .2s,transform .2s}
+.ccb-app-store:hover{background:#07588f;color:#fff;transform:translateY(-2px)}
+.ccb-app-store:focus-visible{outline:3px solid #9c6500;outline-offset:4px}
+.ccb-app-store svg{width:26px;height:30px;flex-shrink:0}
+.ccb-app-store small{display:block;font-size:10px;line-height:1.4;letter-spacing:.6px}
+.ccb-app-store strong{display:block;font-size:20px;line-height:1.2}
+.ccb-app-copy .ccb-app-help{font-size:.85rem;line-height:1.6;margin-bottom:0}
+.ccb-app-help a{color:#013c68;text-underline-offset:3px;font-weight:700}
+[data-bs-theme="dark"] .ccb-app-card{background:#15384f}
+[data-bs-theme="dark"] .ccb-app-copy h1{color:#f0f7fb}
+[data-bs-theme="dark"] .ccb-app-copy .kicker{color:#f5c96f}
+[data-bs-theme="dark"] .ccb-app-copy>p:not(.kicker){color:#d2e4f0}
+[data-bs-theme="dark"] .ccb-app-help a{color:#f5c96f}
+[data-bs-theme="dark"] .ccb-app-store{background:#f5c96f;color:#0b2031}
+[data-bs-theme="dark"] .ccb-app-store:hover{background:#ffe0a0}
+@media(max-width:991.98px){.ccb-app-card{gap:30px;padding:44px 30px}.ccb-app-float{right:-12px;width:190px}.ccb-app-store{padding:12px 15px}}
+@media(max-width:767.98px){.ccb-app-section{padding:20px 0 50px}.ccb-app-card{grid-template-columns:1fr;padding:30px 24px;gap:30px;border-radius:24px}.ccb-app-art{min-height:415px;max-width:380px;width:100%;margin:auto}.ccb-app-phone{width:216px;min-height:402px}.ccb-app-float{right:0;bottom:20px}.ccb-app-copy h1{letter-spacing:-1px}.ccb-app-stores{gap:10px}.ccb-app-store{flex:1;min-width:170px}}
+@media(prefers-reduced-motion:reduce){.ccb-app-store{transition:none}.ccb-app-store:hover{transform:none}}
+
+/* Template-inspired entrance and decorative motion. */
+.ccb-app-art{position:relative}
+.ccb-app-spark{position:absolute;left:14px;top:92px;width:46px;height:46px;color:#013c68}
+.ccb-app-motion{display:inline-flex;align-items:center;margin-top:16px;padding:7px 12px;border:1px solid #8ba5b8;border-radius:8px;background:transparent;color:#013c68;font-family:inherit;font-size:12px;font-weight:600;line-height:1.4;cursor:pointer}
+.ccb-app-motion[hidden]{display:none}
+.ccb-app-motion:focus-visible{outline:3px solid #9c6500;outline-offset:3px}
+[data-bs-theme="dark"] .ccb-app-motion{color:#d2e4f0;border-color:#698ca5}
+@media(prefers-reduced-motion:no-preference){
+.ccb-app-section.ccb-app-revealed .ccb-app-art{animation:ccb-app-enter-right .8s ease-out both}
+.ccb-app-section.ccb-app-revealed .ccb-app-copy{animation:ccb-app-enter-left .8s ease-out both}
+.ccb-app-section.ccb-app-inview .ccb-app-float{animation:ccb-app-float 1.5s ease-in-out infinite}
+.ccb-app-section.ccb-app-inview .ccb-app-spark{animation:ccb-app-spin 10s linear infinite}
+.ccb-app-section.ccb-app-paused .ccb-app-float,.ccb-app-section.ccb-app-paused .ccb-app-spark{animation-play-state:paused}
+}
+@keyframes ccb-app-enter-right{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:translateX(0)}}
+@keyframes ccb-app-enter-left{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:translateX(0)}}
+@keyframes ccb-app-float{0%,100%{transform:translateY(0) rotate(6deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+@keyframes ccb-app-spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.ccb-app-section *{animation:none!important}.ccb-app-motion{display:none}}
+</style>
+
+
+<style>
+.mobile-features{padding:0 0 72px}.mobile-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:32px}.mobile-feature{padding:28px;border:1px solid #cedce5;border-radius:18px;background:#f5f8fa}.mobile-feature h3{font-size:1.2rem;color:#013c68}.mobile-feature p{margin:0;color:#40586a;line-height:1.7}.mobile-feature-number{display:block;color:#8b620d;font-weight:800;margin-bottom:16px}.mobile-start{padding:64px 0;background:#eef4f7}.mobile-start ol{padding-left:1.4rem;margin:28px 0}.mobile-start li{padding:0 0 18px 8px;line-height:1.7}.mobile-start li strong{display:block}.mobile-start .container{max-width:960px}.mobile-privacy{margin:22px 0 0}.mobile-banking-page h2{font-size:clamp(1.7rem,3vw,2.4rem)}[data-bs-theme="dark"] .mobile-feature,[data-bs-theme="dark"] .mobile-start{background:#15384f}[data-bs-theme="dark"] .mobile-feature{border-color:#47667b}[data-bs-theme="dark"] .mobile-feature h3{color:#f0f7fb}[data-bs-theme="dark"] .mobile-feature p{color:#d2e4f0}[data-bs-theme="dark"] .mobile-feature-number{color:#f5c96f}@media(max-width:991.98px){.mobile-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:575.98px){.mobile-feature-grid{grid-template-columns:1fr}.mobile-start{padding:44px 0}}
+</style>
+</head>
+<body class="mobile-banking-page">
+  <div class="fdic-banner" role="region" aria-label="FDIC deposit insurance notice"><div class="container fdic-banner-inner"><img src="https://www.chinocommercialbank.com/wp-content/plugins/FDIC-badge/images/fdic-digital-sign-color.svg" alt="FDIC-Insured — Backed by the full faith and credit of the U.S. Government"></div></div>
+  <div class="concept-bar"><strong>Website redesign concept</strong><span>For review only — banking links open the official Chino Commercial Bank website.</span></div>
+  <header class="site-header" id="top">
+    <div class="utility container justify-content-end"><nav aria-label="Utility navigation"><a href="index.html#locations">Locations</a><a href="contact-us.html">Contact Us</a><a href="https://www.chinocommercialbank.com/investor-relations/">Investor Relations</a></nav></div>
+    <div class="nav-wrap container navbar navbar-expand-lg"><a class="brand navbar-brand m-0" href="index.html" aria-label="Chino Commercial Bank home"><img class="img-fluid" src="ccblogo_blue_transparent2.svg" alt="Chino Commercial Bank, N.A."></a><button class="menu-btn navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-nav" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav class="primary-nav collapse navbar-collapse justify-content-end" id="primary-nav" aria-label="Primary navigation">
+        <div class="nav-dropdown"><button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="about-submenu">About <span class="dropdown-chevron" aria-hidden="true"></span></button><div class="nav-submenu" id="about-submenu"><a href="general-information.html">General Information</a><a href="contact-us.html">Contact Us</a><a href="https://recruiting.paylocity.com/recruiting/jobs/All/fa30d258-9fa7-4cb9-9692-2b614042becb/Chino-Commercial-Bank">Careers</a></div></div>
+        <div class="nav-dropdown"><button class="nav-link nav-dropdown-toggle active" type="button" aria-expanded="false" aria-controls="personal-submenu">Personal <span class="dropdown-chevron" aria-hidden="true"></span></button><div class="nav-submenu" id="personal-submenu"><a href="personal-checking-savings.html?v=theme-tabs">Personal Checking &amp; Savings</a><a href="https://www.chinocommercialbank.com/personal-banking/online-banking/">Online Banking</a>
+<a href="mobile-banking.html" aria-current="page">Mobile Banking</a><a href="https://www.chinocommercialbank.com/personal-banking/retirement-account/">Individual Retirement Account</a><a href="https://www.chinocommercialbank.com/personal-banking/cd/">Certificate of Deposit</a><a href="https://www.chinocommercialbank.com/zelle/">Zelle</a><a href="https://www.chinocommercialbank.com/personal-banking/other-services/">Other Services</a></div></div>
+        <div class="nav-dropdown"><button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="business-submenu">Business <span class="dropdown-chevron" aria-hidden="true"></span></button><div class="nav-submenu" id="business-submenu"><a href="https://www.chinocommercialbank.com/business-checking-savings/">Business Checking &amp; Savings</a><a href="https://www.chinocommercialbank.com/business-banking/business-loans/">Business Loans</a><a href="https://www.chinocommercialbank.com/business-banking/cash-management/">Online Cash Management</a><a href="https://www.chinocommercialbank.com/business-banking/mobile-banking/">Business Mobile Banking</a><a href="https://www.chinocommercialbank.com/business-banking/remote-deposit/">Remote Deposit Capture</a><a href="https://www.chinocommercialbank.com/medical/">Medical Professionals</a><a href="https://www.chinocommercialbank.com/personal-banking/other-services/">Other Services</a></div></div>
+        <div class="nav-dropdown"><button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="loans-submenu">Loans <span class="dropdown-chevron" aria-hidden="true"></span></button><div class="nav-submenu" id="loans-submenu"><a href="https://www.chinocommercialbank.com/business-banking/business-loans/">Business Loans</a><a href="https://www.chinocommercialbank.com/loans/personal-loans/">Personal Loans</a><a href="https://portal.chinocommercialbank.com/">Upload Documents</a><a href="https://portal.chinocommercialbank.com/">PPP Loan Forgiveness</a></div></div>
+        <div class="nav-dropdown"><button class="nav-link nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="merchant-services-submenu">Merchant Services <span class="dropdown-chevron" aria-hidden="true"></span></button><div class="nav-submenu nav-submenu-right" id="merchant-services-submenu"><a href="merchant-services.html">Products</a><a href="merchant-support.html">Hardware Support</a></div></div>
+        <a class="nav-cta btn" href="https://www.chinocommercialbank.com/online-banking/">Online Banking <span>↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1"><section class="ccb-app-section" id="mobile-banking" aria-labelledby="ccb-app-title">
+      <div class="container">
+        <div class="ccb-app-card">
+          <div class="ccb-app-art" aria-hidden="true">
+            <svg class="ccb-app-spark" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M24 2C26 16 32 22 46 24C32 26 26 32 24 46C22 32 16 26 2 24C16 22 22 16 24 2Z"/></svg>
+            <div class="ccb-app-phone">
+              <img src="ccblogo_blue_transparent2.svg" alt="" loading="lazy" width="150" height="64">
+              <p class="ccb-app-screen-title">Your banking.<br>In your hands.</p>
+              <div class="ccb-app-screen-row"><span>▤</span> View accounts</div>
+              <div class="ccb-app-screen-row"><span>⇄</span> Transfer money</div>
+              <div class="ccb-app-screen-row"><span>✓</span> Deposit checks</div>
+            </div>
+            <div class="ccb-app-float"><small>CHINO COMMERCIAL BANK</small><strong>Local banking.<br>Wherever you go.</strong></div>
+          </div>
+          <div class="ccb-app-copy">
+            <p class="kicker">DOWNLOAD OUR APP</p>
+            <h1 id="ccb-app-title">Mobile Banking</h1>
+            <p>Your bank, wherever life takes you. Our free app puts everyday banking on your phone or tablet, with access to your money around the clock.</p>
+            <div class="ccb-app-stores">
+              <a class="ccb-app-store" href="https://play.google.com/store/apps/details?id=com.chinocb.mobile" target="_blank" rel="noopener noreferrer" aria-label="Get Chino Commercial Bank Mobile on Google Play (opens in a new tab)">
+                <svg viewBox="0 0 28 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 2 25 16 3 30Z"/><path d="m3 2 15 19M3 30 18 11"/></svg>
+                <span><small>GET IT ON</small><strong>Google Play</strong></span>
+              </a>
+              <a class="ccb-app-store" href="https://apps.apple.com/us/app/chino-commercial-bank-mobile/id1160458595" target="_blank" rel="noopener noreferrer" aria-label="Download Chino Commercial Bank Mobile on the App Store (opens in a new tab)">
+                <svg viewBox="0 0 24 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="1.5" width="16" height="29" rx="4"/><path d="M10 5h4M10 27h4"/></svg>
+                <span><small>DOWNLOAD ON THE</small><strong>App Store</strong></span>
+              </a>
+            </div>
+            <p class="ccb-app-help">Sign in using your Chino Commercial Bank online banking credentials. <a href="#getting-started">See how to get started</a>.</p>
+            <button class="ccb-app-motion" type="button" aria-pressed="false" aria-label="Pause decorative animation" hidden>Pause animation</button>
+          </div>
+        </div>
+      </div>
+    </section>
+<section class="mobile-features" aria-labelledby="mobile-features-title"><div class="container"><p class="kicker blue">EVERYDAY BANKING, ON THE GO</p><h2 id="mobile-features-title">More convenience. Wherever you are.</h2><div class="mobile-feature-grid"><article class="mobile-feature"><span class="mobile-feature-number" aria-hidden="true">01</span><h3>Keep track of your accounts</h3><p>View balances and recent account activity when you need an update.</p></article><article class="mobile-feature"><span class="mobile-feature-number" aria-hidden="true">02</span><h3>Move money</h3><p>Transfer funds between your accounts or send money to other people.</p></article><article class="mobile-feature"><span class="mobile-feature-number" aria-hidden="true">03</span><h3>Pay your bills</h3><p>Handle bill payments from your mobile device.</p></article><article class="mobile-feature"><span class="mobile-feature-number" aria-hidden="true">04</span><h3>Deposit checks</h3><p>Use your phone to make check deposits.</p></article><article class="mobile-feature"><span class="mobile-feature-number" aria-hidden="true">05</span><h3>Find us nearby</h3><p>Locate bank branches and ATMs while you are out and about.</p></article><article class="mobile-feature"><span class="mobile-feature-number" aria-hidden="true">06</span><h3>Stay informed</h3><p>Set up notifications to help you follow account activity.</p></article></div></div></section>
+<section class="mobile-start" id="getting-started" aria-labelledby="mobile-start-title"><div class="container"><p class="kicker blue">GETTING STARTED</p><h2 id="mobile-start-title">Bring your bank along.</h2><ol><li><strong>Download the app</strong>Choose Chino Commercial Bank Mobile from Google Play or the App Store using the links above.</li><li><strong>Sign in</strong>Use your existing Chino Commercial Bank online banking credentials.</li><li><strong>Start banking</strong>Explore your accounts and mobile tools. Contact our team if you need help getting started.</li></ol><a class="button button-blue btn" href="contact-us.html">Contact Us <b aria-hidden="true">↗</b></a><p class="mobile-privacy"><a href="https://www.chinocommercialbank.com/mobileprivacypolicy/">Mobile Banking Privacy Policy</a></p></div></section></main>
+  <footer>
+    <div class="container footer-grid"><div class="footer-about"><a class="footer-logo" href="index.html"><img src="ccblogo_blue_transparent2.svg" alt="Chino Commercial Bank, N.A."></a><p>Serving individuals and businesses across the Inland Empire with personal attention and practical banking solutions.</p></div><div><h3>Banking</h3><a href="index.html#personal">Personal</a><a href="index.html#business">Business</a><a href="index.html#loans">Loans</a><a href="merchant-services.html">Merchant services</a></div><div><h3>Support</h3><a href="https://www.chinocommercialbank.com/resources/privacy-statement/">Privacy Statement</a><a href="https://www.chinocommercialbank.com/resources/1854-2/">Terms of Use</a><a href="https://www.chinocommercialbank.com/investor-relations/press-media/">Press &amp; Media</a><a href="https://www.chinocommercialbank.com/about/blog/">News</a><a href="https://www.chinocommercialbank.com/resources/customer-awareness/">Customer Awareness</a><a href="https://www.chinocommercialbank.com/protecting-home-ownership/">Protecting Home Ownership</a><a href="https://www.chinocommercialbank.com/resources/fdic-edie/">FDIC – EDIE</a><a href="https://recruiting.paylocity.com/recruiting/jobs/All/fa30d258-9fa7-4cb9-9692-2b614042becb/Chino-Commercial-Bank">Careers</a><a href="https://www.chinocommercialbank.com/resources/employee-bcp-plan/">Employee BCP Plan</a><a href="https://www.chinocommercialbank.com/about/general-information/disclosures/">Disclosures</a><a href="https://www.chinocommercialbank.com/resources/usa-patriot-act/">USA Patriot Act</a></div><div><h3>Connect</h3><a href="tel:+19093938880">(909) 393-8880</a><p class="social-heading">Like Us, and Share!</p><div class="social-links"><a href="https://www.instagram.com/ccb_banking/" target="_blank" rel="noopener noreferrer" aria-label="Chino Commercial Bank on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="social-fill"></circle></svg></a><a href="https://www.facebook.com/ChinoCommercialBank/" target="_blank" rel="noopener noreferrer" aria-label="Chino Commercial Bank on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="social-fill" d="M13.7 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.5 1.6-1.5H17V3.9c-.7-.1-1.5-.2-2.3-.2-2.3 0-3.9 1.4-3.9 4V10H8.2v3h2.6v8h2.9z"></path></svg></a><a href="https://www.youtube.com/channel/UCSEehOozevswzx94W9NWZXA?view_as=subscriber" target="_blank" rel="noopener noreferrer" aria-label="Chino Commercial Bank on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"></rect><path class="social-fill" d="m10 9 5 3-5 3z"></path></svg></a><a href="https://www.linkedin.com/company/chinocommercialbank" target="_blank" rel="noopener noreferrer" aria-label="Chino Commercial Bank on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle><path d="M10 9h4v1.7A5 5 0 0 1 22 15v6h-4v-6a2 2 0 0 0-4 0v6h-4z"></path></svg></a></div><a class="footer-accessibility" href="accessibility.html"><img src="accessibility-icon.svg" alt="" aria-hidden="true"><span>Website Accessibility</span></a><div class="footer-theme"><span class="footer-theme-label">Appearance</span><button class="theme-switch" type="button" role="switch" aria-label="Dark mode" aria-checked="false"><span class="theme-switch-track-icon theme-switch-track-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="theme-switch-track-icon theme-switch-track-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/><path d="M18.5 2v3m-1.5-1.5h3M21 7v2m-1-1h2"/></svg></span><span class="theme-switch-thumb"><span class="theme-switch-thumb-sun"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></span><span class="theme-switch-thumb-moon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.1A8.5 8.5 0 0 1 8.9 4a8.5 8.5 0 1 0 11.1 11.1Z"/><path d="M18.5 2v3m-1.5-1.5h3M21 7v2m-1-1h2"/></svg></span></span></button></div></div></div>
+    <div class="container legal"><span>© 2026 Chino Commercial Bank, N.A.</span><div class="footer-certifications" aria-label="Bank certifications"><img src="fdic-logo.png" alt="Member FDIC"><img src="equal-housing-lender-logo.png" alt="Equal Housing Lender"></div><span><a href="https://www.chinocommercialbank.com/resources/privacy-statement/">Privacy</a> · <a href="accessibility.html">Accessibility</a></span></div>
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 14 6-6 6 6"></path></svg>
+  </button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="script.js?v=theme-2"></script>
+  <script>
+    (() => {
+      const section = document.querySelector('#mobile-banking');
+      if (!section || !('IntersectionObserver' in window)) return;
+      const control = section.querySelector('.ccb-app-motion');
+      control.hidden = false;
+      control.addEventListener('click', () => {
+        const paused = section.classList.toggle('ccb-app-paused');
+        control.setAttribute('aria-pressed', String(paused));
+        control.setAttribute('aria-label', paused ? 'Resume decorative animation' : 'Pause decorative animation');
+        control.textContent = paused ? 'Resume animation' : 'Pause animation';
+      });
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          section.classList.toggle('ccb-app-inview', entry.isIntersecting);
+          if (entry.isIntersecting) section.classList.add('ccb-app-revealed');
+        });
+      }, { threshold: 0.15 });
+      observer.observe(section);
+    })();
+  </script>
+</body>
+</html>
