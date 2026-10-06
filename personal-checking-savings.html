@@ -71,6 +71,28 @@
 @keyframes ccb-app-spin{to{transform:rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){.ccb-app-section *{animation:none!important}.ccb-app-motion{display:none}}
 </style>
+
+<style id="personal-hero-motion">
+/* A short, staggered entrance keeps the hero calm and readable. */
+@media (prefers-reduced-motion: no-preference) {
+  .personal-hero-copy > .kicker { animation: ccb-hero-rise .65s ease-out .05s both; }
+  .personal-hero-copy > h1 { animation: ccb-hero-rise .75s ease-out .14s both; }
+  .personal-hero-copy > p:not(.kicker) { animation: ccb-hero-rise .75s ease-out .24s both; }
+  .personal-hero-copy > .personal-hero-actions { animation: ccb-hero-rise .7s ease-out .34s both; }
+  .personal-hero-photo { animation: ccb-hero-photo-in 1s cubic-bezier(.2,.7,.2,1) .18s both; }
+}
+@keyframes ccb-hero-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ccb-hero-photo-in {
+  from { opacity: 0; transform: translateY(20px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .personal-hero-copy > *, .personal-hero-photo { animation: none !important; }
+}
+</style>
 </head>
 <body class="personal-accounts-page">
   <div class="fdic-banner" role="region" aria-label="FDIC deposit insurance notice"><div class="container fdic-banner-inner"><img src="https://www.chinocommercialbank.com/wp-content/plugins/FDIC-badge/images/fdic-digital-sign-color.svg" alt="FDIC-Insured — Backed by the full faith and credit of the U.S. Government"></div></div>
