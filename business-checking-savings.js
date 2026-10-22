@@ -20,6 +20,20 @@
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let selected = accounts[0].id;
 
+  const pageHeader = document.querySelector('.site-header');
+  const updateHeaderOffset = () => {
+    if (!pageHeader) return;
+    const stickyTop = Math.max(0, parseFloat(getComputedStyle(pageHeader).top) || 0);
+    const offset = Math.ceil(pageHeader.getBoundingClientRect().height + stickyTop + 20);
+    document.documentElement.style.setProperty('--business-header-offset', offset + 'px');
+  };
+  updateHeaderOffset();
+  if (pageHeader && 'ResizeObserver' in window) {
+    const headerObserver = new ResizeObserver(updateHeaderOffset);
+    headerObserver.observe(pageHeader);
+  }
+  window.addEventListener('resize', updateHeaderOffset);
+
   const syncSelection = id => {
     const current = accounts.find(account => account.id === id);
     if (!current) return;
