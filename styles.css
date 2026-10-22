@@ -127,7 +127,9 @@ footer{font-family:"DM Sans",sans-serif;font-size:1rem;line-height:1.65}
    already-dark blue brand sections on their established surfaces. */
 .footer-theme{min-width:0;margin:22px 0 0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
 .footer-theme-label{color:#d5e6f1;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
-.theme-switch{position:relative;display:block;width:116px;height:52px;padding:0;border:2px solid #c4d3e1;border-radius:100px;background:#dce5ee;box-shadow:inset 0 3px 7px rgba(10,31,56,.25);cursor:pointer;transition:background .25s,border-color .25s}
+/* Scale the Appearance switch down 30%, keeping a touch-friendly hit area. */
+.theme-switch{position:relative;display:block;width:116px;height:52px;padding:0;border:2px solid #c4d3e1;border-radius:100px;background:#dce5ee;box-shadow:inset 0 3px 7px rgba(10,31,56,.25);cursor:pointer;transform:scale(.7);transform-origin:top left;margin-bottom:-15.6px;transition:background .25s,border-color .25s}
+.theme-switch::before{content:"";position:absolute;inset:-12px 0}
 .theme-switch svg{display:block;width:25px;height:25px}
 .theme-switch-track-icon{position:absolute;top:12px;color:#8d9caf}
 .theme-switch-track-sun{left:14px}
