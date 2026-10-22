@@ -30,7 +30,11 @@ html.business-enhanced{scroll-padding-top:var(--business-header-offset,210px)}
 .business-page-nav>.container{display:flex;flex-wrap:wrap;align-items:center;gap:6px 34px;padding-top:10px;padding-bottom:10px}
 .business-page-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--business-heading);font-size:.86rem;font-weight:800}
 .business-page-nav a:hover{text-decoration:underline;text-underline-offset:6px;color:var(--business-link)}
-.business-compare,.business-tools{background:var(--business-bg)}
+.business-compare{background:var(--business-bg)}
+.business-tools{background:linear-gradient(110deg,#072f50,#013c68)}
+.business-tools .business-section-heading h2{color:#fff}
+.business-tools .business-section-heading>p{color:#d5e7f5}
+.business-tools .business-section-heading .kicker{color:#f5c96f}
 .business-explore{background:var(--business-soft)}
 .business-section-heading{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:55px;margin-bottom:36px}
 .business-section-heading h2{margin:0;color:var(--business-heading);font:800 clamp(2rem,3.3vw,3.05rem)/1.15 "Manrope",sans-serif;letter-spacing:-.04em}
