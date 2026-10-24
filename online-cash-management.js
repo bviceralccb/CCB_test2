@@ -16,6 +16,63 @@
     observer.observe(header);
   }
   window.addEventListener('resize', updateHeaderOffset);
+  const hoverPointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+  document.querySelectorAll('.cash-card').forEach(card => {
+    const front = card.querySelector('.cash-card-front');
+    const back = card.querySelector('.cash-card-back');
+    const openButton = card.querySelector('.cash-card-open');
+    const closeButton = card.querySelector('.cash-card-close');
+    const backTitle = back?.querySelector('h3');
+    if (!front || !back || !openButton || !closeButton || !backTitle) return;
+    let hovered = false;
+    let pinned = false;
+    let suppressHover = false;
+    const setOpen = (open, moveFocus = false) => {
+      card.classList.toggle('is-flipped', open);
+      front.inert = open;
+      back.inert = !open;
+      front.setAttribute('aria-hidden', String(open));
+      back.setAttribute('aria-hidden', String(!open));
+      openButton.setAttribute('aria-expanded', String(open));
+      if (moveFocus) (open ? backTitle : openButton).focus({preventScroll:true});
+    };
+    openButton.hidden = false;
+    closeButton.hidden = false;
+    setOpen(false);
+    card.classList.add('cash-flip-ready');
+    card.addEventListener('pointerenter', event => {
+      if (!hoverPointer.matches || event.pointerType === 'touch') return;
+      hovered = true;
+      if (!suppressHover && !card.contains(document.activeElement)) setOpen(true);
+    });
+    card.addEventListener('pointerleave', () => {
+      hovered = false;
+      suppressHover = false;
+      if (!pinned && !card.contains(document.activeElement)) setOpen(false);
+    });
+    openButton.addEventListener('click', () => {
+      pinned = true;
+      setOpen(true, true);
+    });
+    const close = () => {
+      pinned = false;
+      suppressHover = hovered;
+      setOpen(false, true);
+    };
+    closeButton.addEventListener('click', close);
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !card.classList.contains('is-flipped')) return;
+      event.preventDefault();
+      close();
+    });
+    card.addEventListener('focusout', () => {
+      requestAnimationFrame(() => {
+        if (card.contains(document.activeElement)) return;
+        pinned = false;
+        if (!hovered || suppressHover) setOpen(false);
+      });
+    });
+  });
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!motion.matches && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
