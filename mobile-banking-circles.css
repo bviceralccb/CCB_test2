@@ -1,0 +1,52 @@
+/* Circular feature cards for the Mobile Banking page. */
+.mobile-features{padding:72px 0 80px;background:#013c68;color:#fff;scroll-margin-top:210px}
+.mobile-features>.container>.kicker{color:#f5c96f;text-align:center}
+.mobile-features h2{color:#fff;text-align:center}
+.mobile-feature-hint{display:flex;align-items:center;justify-content:center;gap:8px;margin:22px 0 0;color:#e0edf7;font-size:.8rem;line-height:1.6}
+.mobile-feature-hint>span{color:#f5c96f;font-size:1.3rem}
+.mobile-feature-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:32px 28px;margin-top:32px}
+.mobile-feature{min-width:0;border:1px solid #cedce5;border-radius:24px;background:#fff;color:#013c68;box-shadow:0 14px 30px #001c3326}
+.mobile-feature-face{display:flex;align-items:center;flex-direction:column;padding:32px;text-align:center}
+.mobile-feature-top{display:grid;place-items:center;position:relative;flex-shrink:0;width:84px;height:84px;margin-bottom:24px}
+.mobile-feature-icon{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:#eab53c;color:#013c68}
+.mobile-feature-icon svg{width:44px;height:44px}
+.mobile-feature-number{display:grid;place-items:center;position:absolute;right:-7px;bottom:-3px;width:30px;height:30px;border:3px solid #fff;border-radius:50%;background:#013c68;color:#fff;font:800 .67rem/1 "Manrope",sans-serif}
+.mobile-feature h3{max-width:260px;margin:0;color:#013c68;font:800 1.35rem/1.3 "Manrope",sans-serif;letter-spacing:-.025em}
+.mobile-feature-back{border-top:1px solid #cedce5}
+.mobile-feature-back h3{margin-bottom:18px;font-size:1.2rem}
+.mobile-feature-back>p{max-width:250px;margin:0 0 18px;color:#40586a;font-size:.92rem;line-height:1.8}
+.mobile-feature-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:6px 12px;border:0;border-radius:999px;background:transparent;color:#013c68;font:800 .78rem/1.35 "Manrope",sans-serif;cursor:pointer}
+.mobile-feature-toggle[hidden]{display:none}
+.mobile-feature-toggle>span{font-size:1.2rem;line-height:1}
+.mobile-feature-open{margin-top:16px}
+.mobile-feature-open:hover{background:#eef4f7}
+.mobile-feature button:focus-visible{outline:3px solid #f5c96f;outline-offset:4px;box-shadow:0 0 0 7px #072f50}
+.mobile-flip-ready{position:relative;width:100%;max-width:360px;aspect-ratio:1;justify-self:center;border:0;border-radius:50%;background:transparent;box-shadow:none;perspective:1200px}
+.mobile-flip-ready .mobile-feature-rotor{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.65,.25,1)}
+.mobile-flip-ready.is-flipped .mobile-feature-rotor{transform:rotateY(180deg)}
+.mobile-flip-ready .mobile-feature-face{position:absolute;inset:0;justify-content:center;padding:34px;border:1px solid #cedce5;border-radius:50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;box-shadow:0 18px 36px #001c3333}
+.mobile-flip-ready .mobile-feature-face::before{content:"";position:absolute;inset:10px;border:1px solid #dce7ef;border-radius:50%;pointer-events:none}
+.mobile-flip-ready .mobile-feature-front{background:radial-gradient(circle at 30% 20%,#eef4f7,#fff 75%)}
+.mobile-flip-ready .mobile-feature-back{transform:rotateY(180deg);border-color:#f5c96f;background:linear-gradient(135deg,#075789,#072f50);color:#fff}
+.mobile-flip-ready .mobile-feature-back::before{border-color:#ffffff40}
+.mobile-flip-ready .mobile-feature-back h3{color:#fff}
+.mobile-flip-ready .mobile-feature-back>p{color:#e3edf5}
+.mobile-flip-ready .mobile-feature-close{border:1px solid #ffffff50;background:#ffffff0d;color:#fff;font-size:.74rem}
+.mobile-flip-ready .mobile-feature-close:hover{background:#ffffff20}
+.mobile-flip-ready:focus-within{outline:3px solid #f5c96f;outline-offset:6px}
+@media(prefers-reduced-motion:no-preference){
+  .mobile-feature.feature-enter{animation:ccb-feature-rise .65s cubic-bezier(.2,.7,.2,1) both}
+}
+@keyframes ccb-feature-rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:991.98px){.mobile-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 24px}}
+@media(max-width:767.98px){.mobile-features{padding:48px 0}.mobile-feature-grid{grid-template-columns:minmax(0,1fr);gap:28px}.mobile-feature-hint{font-size:.75rem}}
+@media(max-width:380px){
+  .mobile-flip-ready .mobile-feature-face{padding:28px}
+  .mobile-feature-top,.mobile-feature-icon{width:68px;height:68px}
+  .mobile-feature-top{margin-bottom:18px}
+  .mobile-feature-icon svg{width:36px;height:36px}
+  .mobile-feature h3{font-size:1.16rem}
+  .mobile-feature-back h3{margin-bottom:14px;font-size:1.1rem}
+  .mobile-feature-back>p{margin-bottom:14px;font-size:.85rem;line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){.mobile-feature{animation:none!important}.mobile-flip-ready .mobile-feature-rotor{transition:none}}
